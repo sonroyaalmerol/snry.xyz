@@ -7,8 +7,12 @@ export default function Home() {
   return (
     <>
       <NextSeo
-        title="Son Roy Almerol | snry.xyz"
-        description="Son Roy Almerol's personal website."
+        title="Home"
+        description="As a Software Engineer, my portfolio website showcases my expertise in Full-stack development. Discover my dynamic projects and cutting-edge software solutions today."
+        openGraph={{
+          title: 'Son Roy Almerol | snry.xyz',
+          description: 'As a Software Engineer, my portfolio website showcases my expertise in Full-stack development. Discover my dynamic projects and cutting-edge software solutions today.',
+        }}
       />
       <PageLayout>
         <Landing />

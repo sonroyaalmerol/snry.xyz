@@ -2,12 +2,16 @@ import PageLayout from '@/components/PageLayout'
 import { Box, Heading } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
 
-export default function Home() {
+export default function Projects() {
   return (
     <>
       <NextSeo
-        title="Son Roy Almerol | snry.xyz"
-        description="Son Roy Almerol's personal website."
+        title="Projects"
+        description="From game-changing applications to innovative web designs, discover the exciting range of dynamic projects I have created as a Full-stack developer."
+        openGraph={{
+          title: 'Son Roy Almerol (Projects) | snry.xyz',
+          description: 'From game-changing applications to innovative web designs, discover the exciting range of dynamic projects I have created as a Full-stack developer.',
+        }}
       />
       <PageLayout>
         <Box p={2} mt="80px">
