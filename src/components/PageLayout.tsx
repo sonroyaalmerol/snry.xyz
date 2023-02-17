@@ -40,6 +40,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
           borderRadius="full"
           aria-label="Github"
           colorScheme="whiteAlpha"
+          color={theme.colors.white}
           icon={<Icon as={FaGithub} />}
         />
         <IconButton
@@ -49,6 +50,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
           borderRadius="full"
           aria-label="LinkedIn"
           colorScheme="whiteAlpha"
+          color={theme.colors.white}
           icon={<Icon as={FaLinkedin} />}
         />
         <IconButton
@@ -58,6 +60,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
           borderRadius="full"
           aria-label="Mail"
           colorScheme="whiteAlpha"
+          color={theme.colors.white}
           icon={<Icon as={GrMail} />}
         />
       </FloatingActionButtons>
