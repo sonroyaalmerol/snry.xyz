@@ -36,7 +36,7 @@ const PeerCursor: React.FC<PeerCursorProps> = ({ peerId, position, ...restProps 
           bgColor={generateRandomColor(peerId)}
           {...restProps}
         />
-        <Text color={theme.colors.white} fontSize="xs">User: {peerId.slice(0, 4)}</Text>
+        <Text color={theme.colors.white} fontSize="xs">Visitor: {peerId.slice(0, 4)}</Text>
       </VStack>
       
     </Box>
