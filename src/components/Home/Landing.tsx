@@ -23,7 +23,10 @@ const Landing: React.FC = () => {
           </Heading>
           <Text>Full-Stack Developer</Text>
         </VStack>
-        <SearchBar placeholder="What are you looking to build?" w={{ base: '80vw', md: '60vw' }} />
+        <VStack>
+          <Text fontSize="sm">What are you looking to build?</Text>
+          <SearchBar w={{ base: '80vw', md: '60vw' }} />
+        </VStack>
       </VStack>
     </Box>
   )
