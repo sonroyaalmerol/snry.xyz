@@ -2,11 +2,12 @@ import React from "react"
 import { Box, BoxProps, Icon, IconButton, useTheme } from "@chakra-ui/react"
 import Navbar from "@/components/Navbar"
 import { useTrysteroRoom } from "@/utils/hooks/useTrysteroRoom"
-import PeerCursor from "./PeerCursor"
+import PeerCursor from "@/components/PeerCursor"
 import usePeerCursor from "@/utils/hooks/usePeerCursor"
-import FloatingActionButtons from "./FloatingActionButton"
+import FloatingActionButtons from "@/components/FloatingActionButton"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { GrMail } from 'react-icons/gr'
+import Stats from "@/components/Stats"
 
 const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
   const { peers, room } = useTrysteroRoom()
@@ -32,6 +33,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
         )
       })}
 
+      <Stats />
       <FloatingActionButtons>
         <IconButton
           as="a"
