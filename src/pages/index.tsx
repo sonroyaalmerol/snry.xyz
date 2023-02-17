@@ -1,5 +1,6 @@
 import Landing from '@/components/Home/Landing'
 import PageLayout from '@/components/PageLayout'
+import Stats from '@/components/Stats'
 import { NextSeo } from 'next-seo'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       />
       <PageLayout>
         <Landing />
+        <Stats />
       </PageLayout>
     </>
   )

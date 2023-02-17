@@ -19,9 +19,9 @@ const Landing: React.FC = () => {
       <VStack spacing={8}>
         <VStack>
           <Heading>
-            Son Roy Almerol
+            Son Roy Almerol 👑
           </Heading>
-          <Text>Full-Stack Developer</Text>
+          <Text>Full-Stack Developer | Software Consultant</Text> 
         </VStack>
         <VStack>
           <Text fontSize="sm">What are you looking to build?</Text>
