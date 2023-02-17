@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <Box
       as="nav"
       w="100%"
-      h="80px"
+      position="absolute"
       bgColor={theme.colors.brand[700]}
       color={theme.colors.white}
       p={4}

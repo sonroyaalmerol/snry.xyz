@@ -1,6 +1,5 @@
-import Landing from '@/components/Home/Landing'
 import PageLayout from '@/components/PageLayout'
-import { Heading } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
 
 export default function Home() {
@@ -11,7 +10,9 @@ export default function Home() {
         description="Son Roy Almerol's personal website."
       />
       <PageLayout>
-        <Heading>Resume</Heading>
+        <Box p={2} mt="80px">
+          <Heading>Resume</Heading>
+        </Box>
       </PageLayout>
     </>
   )

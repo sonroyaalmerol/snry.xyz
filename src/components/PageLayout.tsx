@@ -19,7 +19,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
       as="main"
       position="relative"
       overflow="hidden"
-      minH="calc(100vh - 80px)"
+      minH="100vh"
       color={theme.colors.white}
       bgColor={theme.colors.brand[700]}
       {...restProps}
