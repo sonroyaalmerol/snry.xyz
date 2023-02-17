@@ -8,7 +8,7 @@ type LinkProps = ChakraLinkProps & {
 
 const Link: React.FC<LinkProps> = ({ children, href, ...props }) => {
   return (
-    <ChakraLink as={NextLink} to={href} {...props}>
+    <ChakraLink as={NextLink} href={href} {...props}>
       {children}
     </ChakraLink>
   )
