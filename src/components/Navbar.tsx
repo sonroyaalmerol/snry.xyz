@@ -62,6 +62,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             icon={<HamburgerIcon />}
             aria-label="Open navbar drawer"
             variant="ghost"
+            color={theme.colors.white}
             colorScheme="whiteAlpha"
             borderRadius="50%"
           />
