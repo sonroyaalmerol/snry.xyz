@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import { useTheme } from '@chakra-ui/react'
 import SearchBar from '@/components/SearchBar'
+import { TypeAnimation } from 'react-type-animation'
 
 const Landing: React.FC = () => {
   const theme = useTheme()
@@ -21,7 +22,27 @@ const Landing: React.FC = () => {
           <Heading textAlign="center">
             Son Roy Almerol 👑
           </Heading>
-          <Text textAlign="center">Full-Stack Developer | Software Consultant</Text> 
+          <Text textAlign="center">
+            Software Consultant | <TypeAnimation 
+              sequence={[
+                'Full-stack',
+                2000,
+                'Frontend',
+                1000,
+                'Backend',
+                1000,
+                'React',
+                1000,
+                'Node',
+                1000,
+                'Javascript',
+                1000,
+              ]}
+              wrapper="span"
+              cursor={false}
+              repeat={Infinity}
+            /> Developer
+          </Text> 
         </VStack>
         <VStack>
           <Text fontSize="sm" textAlign="center">What are you looking to build?</Text>

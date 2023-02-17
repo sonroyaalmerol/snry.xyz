@@ -20,6 +20,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.7.1
+  react-type-animation: ^2.1.2
   trystero: ^0.11.8
   typescript: 4.9.5
 
@@ -43,6 +44,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
+  react-type-animation: 2.1.2_biqbaboplfbrettd7655fr4n2y
   trystero: 0.11.8_eslint@8.34.0
   typescript: 4.9.5
 
@@ -6904,6 +6906,17 @@ packages:
       invariant: 2.2.4
       react: 18.2.0
       tslib: 2.5.0
+    dev: false
+
+  /react-type-animation/2.1.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-6/t4Whl87sLR0c8kzvJngTrCV6OVy3jEeUZoe2svVu9VaYr951VD7OeUie1rIyeD8JfpBIqZGYrPFHZQ04XHrw==}
+    peerDependencies:
+      prop-types: ^15.5.4
+      react: '>= 15.0.0'
+      react-dom: '>= 15.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/18.2.0:

@@ -20,6 +20,7 @@ import {
 
 import Link from '@/components/Link'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { TypeAnimation } from 'react-type-animation'
 
 interface NavbarProps {
 
@@ -27,6 +28,7 @@ interface NavbarProps {
 
 const navbarMenus = [
   <Link key="/home" href="/">#home</Link>,
+  <Link key="/about" href="/about">#about</Link>,
   <Link key="/projects" href="/projects">#projects</Link>,
   <Link key="/resume" href="/resume">#resume</Link>
 ]
@@ -48,7 +50,14 @@ const Navbar: React.FC<NavbarProps> = () => {
       px={8}
     >
       <Flex>
-        <Heading>snry.xyz</Heading>
+        <Heading>
+          <TypeAnimation 
+            sequence={['snry.xyz']}
+            cursor={true}
+            repeat={0}
+            speed={1}
+          />
+        </Heading>
         <Spacer />
         <HStack spacing={8} display={{ base: 'none', md: 'flex' }} >
           {navbarMenus}
