@@ -18,13 +18,13 @@ const Landing: React.FC = () => {
     >
       <VStack spacing={8}>
         <VStack>
-          <Heading>
+          <Heading textAlign="center">
             Son Roy Almerol 👑
           </Heading>
-          <Text>Full-Stack Developer | Software Consultant</Text> 
+          <Text textAlign="center">Full-Stack Developer | Software Consultant</Text> 
         </VStack>
         <VStack>
-          <Text fontSize="sm">What are you looking to build?</Text>
+          <Text fontSize="sm" textAlign="center">What are you looking to build?</Text>
           <SearchBar w={{ base: '80vw', md: '60vw' }} />
         </VStack>
       </VStack>

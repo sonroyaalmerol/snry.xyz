@@ -50,23 +50,20 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Flex>
         <Heading>snry.xyz</Heading>
         <Spacer />
-        <Hide below='md'>
-          <HStack spacing={8}>
-            {navbarMenus}
-          </HStack>
-        </Hide>
-        <Hide above='md'>
-          <IconButton
-            ref={btnRef}
-            onClick={onOpen}
-            icon={<HamburgerIcon />}
-            aria-label="Open navbar drawer"
-            variant="ghost"
-            color={theme.colors.white}
-            colorScheme="whiteAlpha"
-            borderRadius="50%"
-          />
-        </Hide>
+        <HStack spacing={8} display={{ base: 'none', md: 'flex' }} >
+          {navbarMenus}
+        </HStack>
+        <IconButton
+          display={{ base: 'flex', md: 'none' }}
+          ref={btnRef}
+          onClick={onOpen}
+          icon={<HamburgerIcon />}
+          aria-label="Open navbar drawer"
+          variant="ghost"
+          color={theme.colors.white}
+          colorScheme="whiteAlpha"
+          borderRadius="50%"
+        />
       </Flex>
 
       <Drawer
