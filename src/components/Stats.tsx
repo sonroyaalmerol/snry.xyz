@@ -8,7 +8,7 @@ const Stats: React.FC<BoxProps> = ({ children, ...restProps }) => {
   return (
     <Box as="footer" position="fixed" bottom="0" left="0" padding="2rem" {...restProps}>
       <VStack align="baseline">
-        <Text fontSize="xs">Current visitors: {peers.length}</Text>
+        <Text fontSize="xs">Current visitors: {peers.length + 1}</Text>
       </VStack>
     </Box>
   )
