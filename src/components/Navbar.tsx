@@ -28,7 +28,7 @@ interface NavbarProps {
 
 const navbarMenus = [
   <Link key="/home" href="/">#home</Link>,
-  <Link key="/story" href="/about">#my-story</Link>,
+  <Link key="/story" href="/story">#my-story</Link>,
   <Link key="/projects" href="/projects">#projects</Link>,
   <Link key="/resume" href="/resume">#resume</Link>
 ]
