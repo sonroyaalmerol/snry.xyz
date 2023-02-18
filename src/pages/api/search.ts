@@ -4,6 +4,9 @@ import nlp from 'compromise/three'
 import stats, { StatsMethods } from 'compromise-stats'
 import { removeStopwords } from 'stopword'
 import thesaurus, { TypeOfThesaurus } from 'word-thesaurus'
+import path from 'node:path'
+
+thesaurus.src.file = path.join(__dirname, '../../../../src/utils/thesaurus.dat')
 
 nlp.plugin(stats)
 
@@ -96,11 +99,9 @@ export default function handler(
 
   const searchTerms = processString(query, false)
   const searchTfidfArray = getTfidfArray(searchTerms)
-  console.log(searchTerms)
   
   const projectsWithTfidfStats = projects.map(project => {
     const descriptionTerms = processString(project.description, true)
-    console.log(descriptionTerms)
     const descriptionTfidfArray = getTfidfArray(descriptionTerms)
 
     return {
