@@ -11,6 +11,9 @@ specifiers:
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  '@types/stopword': ^2.0.0
+  compromise: ^14.8.2
+  compromise-stats: ^0.1.0
   eslint: 8.34.0
   eslint-config-next: 13.1.6
   framer-motion: ^9.0.4
@@ -21,8 +24,10 @@ specifiers:
   react-dom: 18.2.0
   react-icons: ^4.7.1
   react-type-animation: ^2.1.2
+  stopword: ^2.0.7
   trystero: ^0.11.8
   typescript: 4.9.5
+  word-thesaurus: ^1.0.2
 
 dependencies:
   '@chakra-ui/icons': 2.0.17_react@18.2.0
@@ -35,6 +40,8 @@ dependencies:
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  compromise: 14.8.2
+  compromise-stats: 0.1.0_compromise@14.8.2
   eslint: 8.34.0
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
   framer-motion: 9.0.4_biqbaboplfbrettd7655fr4n2y
@@ -45,8 +52,13 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
   react-type-animation: 2.1.2_biqbaboplfbrettd7655fr4n2y
+  stopword: 2.0.7
   trystero: 0.11.8_eslint@8.34.0
   typescript: 4.9.5
+  word-thesaurus: 1.0.2
+
+devDependencies:
+  '@types/stopword': 2.0.0
 
 packages:
 
@@ -2616,6 +2628,10 @@ packages:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: false
 
+  /@types/stopword/2.0.0:
+    resolution: {integrity: sha512-R9g+FLEFzxRANryn5f2Beg7WMMopGBNI6Ghi3+8WrOZL7C063db0VuVrEpbKrML8o6sOryNN81ms9waSJITJqw==}
+    dev: true
+
   /@typescript-eslint/parser/5.52.0_7kw3g6rralp5ps6mg3uyzz6azm:
     resolution: {integrity: sha512-e2KiLQOZRo4Y0D/b+3y08i3jsekoSkOYStROYmPUnGMEoA0h+k2qOH5H6tcjIc68WDvGwH+PaOrP1XRzLJ6QlA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -3140,6 +3156,24 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
+  /compromise-stats/0.1.0_compromise@14.8.2:
+    resolution: {integrity: sha512-hiZ0IjrPk0oZIudh1PtR5haiUZ3dMgqtaCrMneXQ92KDszdbLfzTp+tDtStPs+ssmgDCZ0Mgb3Wmpr12+skLUA==}
+    peerDependencies:
+      compromise: '>=14.0.0'
+    dependencies:
+      compromise: 14.8.2
+      efrt: 2.7.0
+    dev: false
+
+  /compromise/14.8.2:
+    resolution: {integrity: sha512-B/2MxDx2R1U8QlZPZycypvqv/JfSPJSyh/sTUxIuteSja5ABWzHoLpaTGmRiai1GX7wKA1pOSSwtp4XRFGDKnA==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      efrt: 2.7.0
+      grad-school: 0.0.5
+      suffix-thumb: 4.0.2
+    dev: false
+
   /compute-scroll-into-view/1.0.20:
     resolution: {integrity: sha512-UCB0ioiyj8CRjtrvaceBLqqhZCVP+1B8+NWQhmdsm0VXOJtobBCf1dBQmebCCo34qZmUwZfIH2MZLqNHazrfjg==}
     dev: false
@@ -3426,6 +3460,11 @@ packages:
     dependencies:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
+    dev: false
+
+  /efrt/2.7.0:
+    resolution: {integrity: sha512-/RInbCy1d4P6Zdfa+TMVsf/ufZVotat5hCw3QXmWtjU+3pFEOvOQ7ibo3aIxyCJw2leIeAMjmPj+1SLJiCpdrQ==}
+    engines: {node: '>=12.0.0'}
     dev: false
 
   /electron-fetch/1.9.1:
@@ -4345,6 +4384,11 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
+    dev: false
+
+  /grad-school/0.0.5:
+    resolution: {integrity: sha512-rXunEHF9M9EkMydTBux7+IryYXEZinRk6g8OBOGDBzo/qWJjhTxy86i5q7lQYpCLHN8Sqv1XX3OIOc7ka2gtvQ==}
+    engines: {node: '>=8.0.0'}
     dev: false
 
   /grapheme-splitter/1.0.4:
@@ -7255,6 +7299,10 @@ packages:
       internal-slot: 1.0.5
     dev: false
 
+  /stopword/2.0.7:
+    resolution: {integrity: sha512-s+uLKAxrproCLrq0Wcd3JAIjlJLx6l80b2Rzt0u8+ra5SzGkHnNG8PS3DfGmYk2TrKePDVLL4SdKYwKpgSLc+w==}
+    dev: false
+
   /stream-to-it/0.2.4:
     resolution: {integrity: sha512-4vEbkSs83OahpmBybNJXlJd7d6/RxzkkSdT3I0mnGt79Xd2Kk+e1JqbvAvsQfCeKj3aKb0QIWkyK3/n0j506vQ==}
     dependencies:
@@ -7351,6 +7399,10 @@ packages:
 
   /stylis/4.1.3:
     resolution: {integrity: sha512-GP6WDNWf+o403jrEp9c5jibKavrtLW+/qYGhFxFrG8maXhwTBI7gLLhiBb0o7uFccWN+EOS9aMO6cGHWAO07OA==}
+    dev: false
+
+  /suffix-thumb/4.0.2:
+    resolution: {integrity: sha512-CCvCAr7JyeQoO+/lyq3P2foZI/xJz5kpG3L6kg2CaOf9K2/gaM9ixy/JTuRwjEK38l306zE7vl3JoOZYmLQLlA==}
     dev: false
 
   /supports-color/5.5.0:
@@ -7727,6 +7779,11 @@ packages:
     hasBin: true
     dependencies:
       isexe: 2.0.0
+    dev: false
+
+  /word-thesaurus/1.0.2:
+    resolution: {integrity: sha512-ZIdsBLV2IcZz4YCS2v1Emy3o67H0HpToxSOMPHemW6wjzV9EjToylOcY9S+vJwZnK+hhCdPlJ/rFbjWMRfT1gw==}
+    engines: {node: '>=16.0 <19'}
     dev: false
 
   /word-wrap/1.2.3:
