@@ -4,9 +4,9 @@ import nlp from 'compromise/three'
 import stats, { StatsMethods } from 'compromise-stats'
 import { removeStopwords } from 'stopword'
 import thesaurus, { TypeOfThesaurus } from 'word-thesaurus'
-import path from 'node:path'
+import path from 'path'
 
-thesaurus.src.file = path.join(__dirname, '../../../../src/utils/thesaurus.dat')
+thesaurus.src.file = path.join(process.cwd(), 'thesaurus.dat')
 
 nlp.plugin(stats)
 
