@@ -8,10 +8,10 @@ import '@fontsource/fira-code/700.css'
 import {
   Box,
   ChakraProvider,
-  CircularProgress
 } from '@chakra-ui/react'
 
 import theme from '@/utils/theme'
+import { trpc } from '@/utils/trpc'
 
 import { Provider as JotaiProvider } from 'jotai'
 import { TrysteroProvider } from '@/utils/hooks/useTrysteroRoom'
@@ -19,7 +19,7 @@ import { AnimatePresence } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { DefaultSeo } from 'next-seo'
 
-export default function App({ Component, pageProps, router }: AppProps) {
+const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
       <DefaultSeo
@@ -76,3 +76,5 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </>
   )
 }
+
+export default trpc.withTRPC(App)

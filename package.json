@@ -16,6 +16,11 @@
     "@emotion/styled": "^11.10.5",
     "@fontsource/fira-code": "^4.5.13",
     "@next/font": "13.1.6",
+    "@tanstack/react-query": "^4.24.9",
+    "@trpc/client": "^10.12.0",
+    "@trpc/next": "^10.12.0",
+    "@trpc/react-query": "^10.12.0",
+    "@trpc/server": "^10.12.0",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -32,9 +37,11 @@
     "react-icons": "^4.7.1",
     "react-type-animation": "^2.1.2",
     "stopword": "^2.0.7",
+    "superjson": "^1.12.2",
     "trystero": "^0.11.8",
     "typescript": "4.9.5",
-    "word-thesaurus": "^1.0.2"
+    "word-thesaurus": "^1.0.2",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@types/stopword": "^2.0.0"
