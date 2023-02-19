@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 
 import theme from '@/utils/theme';
-import { trpc } from '@/utils/trpc';
+import trpc from '@/utils/trpc';
 
 import { Provider as JotaiProvider } from 'jotai';
 import { TrysteroProvider } from '@/utils/hooks/useTrysteroRoom';

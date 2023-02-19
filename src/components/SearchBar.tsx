@@ -4,7 +4,7 @@ import {
   Input, InputGroup, InputLeftElement, InputProps,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-// import { trpc } from '@/utils/trpc';
+// import trpc from '@/utils/trpc';
 
 const SearchBar: React.FC<InputProps> = (props) => {
   const [searchTerm, setSearchTerm] = React.useState<string>('');
