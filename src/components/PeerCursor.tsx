@@ -1,18 +1,20 @@
-import { Box, Text, useTheme, VStack } from '@chakra-ui/react';
+import {
+  Box, Text, useTheme, VStack,
+} from '@chakra-ui/react';
 import React from 'react';
 
 const generateRandomColor = (seed: string): string => {
   // Generate a random number based on the seed
   const randomNumber = parseInt(
     Math.floor(Math.abs(Math.sin(seed.charCodeAt(0)) * 16777215)).toString(),
-    10
+    10,
   );
 
   // Convert the number to a 6-digit hex color string
-  const hexColor = `#${randomNumber.toString(16).padStart(6, "0")}`;
+  const hexColor = `#${randomNumber.toString(16).padStart(6, '0')}`;
 
   return hexColor;
-}
+};
 
 interface PeerCursorProps extends React.HTMLAttributes<HTMLDivElement> {
   peerId: string,
@@ -20,7 +22,7 @@ interface PeerCursorProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const PeerCursor: React.FC<PeerCursorProps> = ({ peerId, position, ...restProps }) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Box
@@ -36,11 +38,14 @@ const PeerCursor: React.FC<PeerCursorProps> = ({ peerId, position, ...restProps 
           bgColor={generateRandomColor(peerId)}
           {...restProps}
         />
-        <Text color={theme.colors.white} fontSize="xs">Visitor: {peerId.slice(0, 4)}</Text>
+        <Text color={theme.colors.white} fontSize="xs">
+          Visitor:
+          {peerId.slice(0, 4)}
+        </Text>
       </VStack>
-      
-    </Box>
-  )
-}
 
-export default PeerCursor
+    </Box>
+  );
+};
+
+export default PeerCursor;

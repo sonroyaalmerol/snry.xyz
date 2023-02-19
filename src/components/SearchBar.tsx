@@ -1,17 +1,19 @@
-import React from "react"
+import React from 'react';
 
-import { Input, InputGroup, InputLeftElement, InputProps } from "@chakra-ui/react"
-import { SearchIcon } from "@chakra-ui/icons"
-import { trpc } from "@/utils/trpc"
+import {
+  Input, InputGroup, InputLeftElement, InputProps,
+} from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+// import { trpc } from '@/utils/trpc';
 
 const SearchBar: React.FC<InputProps> = (props) => {
-  const [searchTerm, setSearchTerm] = React.useState<string>("");
+  const [searchTerm, setSearchTerm] = React.useState<string>('');
 
-  const search = trpc.search.useQuery({ query: searchTerm });
+  // const search = trpc.search.useQuery({ query: searchTerm });
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     console.log(search.data?.results);
-  }, [search.data?.results])
+  }, [search.data?.results]); */
 
   return (
     <InputGroup>
@@ -23,4 +25,4 @@ const SearchBar: React.FC<InputProps> = (props) => {
   );
 };
 
-export default SearchBar
+export default SearchBar;

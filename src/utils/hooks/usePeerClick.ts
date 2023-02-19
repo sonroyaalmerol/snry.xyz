@@ -1,25 +1,28 @@
-import React from 'react'
+import React from 'react';
 
-import type { Room } from 'trystero'
+import type { Room } from 'trystero';
 
-const usePeerClick = (room: Room | null, onClick: (peerId: string, position: [number, number]) => void) => {
+const usePeerClick = (
+  room: Room | null,
+  onClick: (peerId: string, position: [number, number]) => void,
+) => {
   React.useEffect(() => {
     if (room !== null) {
       try {
-        const [sendClick, getClick] = room.makeAction('click')
+        const [sendClick, getClick] = room.makeAction('click');
 
         window.addEventListener('click', (e) => {
-          sendClick([e.clientX, e.clientY])
-        })
+          sendClick([e.clientX, e.clientY]);
+        });
 
         getClick(([x, y]: any, peerId) => {
-          onClick(peerId, [x, y])
-        })
+          onClick(peerId, [x, y]);
+        });
       } catch (e: any) {
-        if (!e.message.includes('already registered')) console.error(e)
+        // if (!e.message.includes('already registered')) console.error(e);
       }
     }
-  }, [room, onClick])
-}
+  }, [room, onClick]);
+};
 
-export default usePeerClick
+export default usePeerClick;

@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import { 
+import {
   Box,
   IconButton,
   Flex,
   Heading,
-  Hide,
   HStack,
   Spacer,
   useTheme,
@@ -13,14 +12,13 @@ import {
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
   VStack,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import Link from '@/components/Link'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { TypeAnimation } from 'react-type-animation'
+import Link from '@/components/Link';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { TypeAnimation } from 'react-type-animation';
 
 interface NavbarProps {
 
@@ -30,14 +28,14 @@ const navbarMenus = [
   <Link key="/home" href="/">#home</Link>,
   <Link key="/story" href="/story">#my-story</Link>,
   <Link key="/projects" href="/projects">#projects</Link>,
-  <Link key="/resume" href="/resume">#resume</Link>
-]
+  <Link key="/resume" href="/resume">#resume</Link>,
+];
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const theme = useTheme()
-  
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef<HTMLButtonElement>(null)
+  const theme = useTheme();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <Box
@@ -51,15 +49,15 @@ const Navbar: React.FC<NavbarProps> = () => {
     >
       <Flex>
         <Heading>
-          <TypeAnimation 
+          <TypeAnimation
             sequence={['snry.xyz']}
-            cursor={true}
+            cursor
             repeat={0}
             speed={1}
           />
         </Heading>
         <Spacer />
-        <HStack spacing={8} display={{ base: 'none', md: 'flex' }} >
+        <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
           {navbarMenus}
         </HStack>
         <IconButton
@@ -77,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
       <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
         size="xs"
@@ -92,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </DrawerContent>
       </Drawer>
     </Box>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

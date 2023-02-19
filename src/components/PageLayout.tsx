@@ -1,18 +1,20 @@
-import React from "react"
-import { Box, BoxProps, Icon, IconButton, useTheme } from "@chakra-ui/react"
-import Navbar from "@/components/Navbar"
-import { useTrysteroRoom } from "@/utils/hooks/useTrysteroRoom"
-import PeerCursor from "@/components/PeerCursor"
-import usePeerCursor from "@/utils/hooks/usePeerCursor"
-import FloatingActionButtons from "@/components/FloatingActionButton"
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { GrMail } from 'react-icons/gr'
-import { motion } from "framer-motion"
+import React from 'react';
+import {
+  Box, BoxProps, Icon, IconButton, useTheme,
+} from '@chakra-ui/react';
+import Navbar from '@/components/Navbar';
+import { useTrysteroRoom } from '@/utils/hooks/useTrysteroRoom';
+import PeerCursor from '@/components/PeerCursor';
+import usePeerCursor from '@/utils/hooks/usePeerCursor';
+import FloatingActionButtons from '@/components/FloatingActionButton';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
+import { motion } from 'framer-motion';
 
 const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
-  const { peers, room } = useTrysteroRoom()
-  const positions = usePeerCursor(room)
-  const theme = useTheme()
+  const { peers, room } = useTrysteroRoom();
+  const positions = usePeerCursor(room);
+  const theme = useTheme();
 
   return (
     <motion.div
@@ -20,7 +22,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{
-        type: "spring",
+        type: 'spring',
         stiffness: 260,
         damping: 20,
       }}
@@ -37,11 +39,9 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
         <Navbar />
         {children}
 
-        {peers.map((peer) => {
-          return (
-            <PeerCursor key={peer} peerId={peer} position={positions[peer]} />
-          )
-        })}
+        {peers.map((peer) => (
+          <PeerCursor key={peer} peerId={peer} position={positions[peer]} />
+        ))}
 
         <FloatingActionButtons>
           <IconButton
@@ -77,7 +77,7 @@ const PageLayout: React.FC<BoxProps> = ({ children, ...restProps }) => {
         </FloatingActionButtons>
       </Box>
     </motion.div>
-  )
-}
+  );
+};
 
-export default PageLayout
+export default PageLayout;

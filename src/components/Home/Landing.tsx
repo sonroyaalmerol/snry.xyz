@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import { Box, Heading, Text, VStack } from '@chakra-ui/react'
-import { useTheme } from '@chakra-ui/react'
-import SearchBar from '@/components/SearchBar'
-import { TypeAnimation } from 'react-type-animation'
+import {
+  Box, Heading, Text, VStack,
+  useTheme,
+} from '@chakra-ui/react';
+import SearchBar from '@/components/SearchBar';
+import { TypeAnimation } from 'react-type-animation';
 
 const Landing: React.FC = () => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Box
@@ -23,7 +25,9 @@ const Landing: React.FC = () => {
             Son Roy Almerol 👑
           </Heading>
           <Text textAlign="center">
-            Software Consultant | <TypeAnimation 
+            Software Consultant |
+            {' '}
+            <TypeAnimation
               sequence={[
                 'Full-stack',
                 2000,
@@ -41,8 +45,10 @@ const Landing: React.FC = () => {
               wrapper="span"
               cursor={false}
               repeat={Infinity}
-            /> Developer
-          </Text> 
+            />
+            {' '}
+            Developer
+          </Text>
         </VStack>
         <VStack>
           <Text fontSize="sm" textAlign="center">What are you looking to build?</Text>
@@ -50,7 +56,7 @@ const Landing: React.FC = () => {
         </VStack>
       </VStack>
     </Box>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

@@ -1,32 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-import type { Room } from 'trystero'
+import type { Room } from 'trystero';
 
 const usePeerCursor = (room: Room | null) => {
-  const [cursor, setCursor] = React.useState<{ [peerId: string]: [number, number] }>({})
+  const [cursor, setCursor] = React.useState<{ [peerId: string]: [number, number] }>({});
 
   React.useEffect(() => {
     if (room !== null) {
       try {
-        const [sendCursor, getCursor] = room.makeAction(`cursor-move`.slice(0, 12))
-      
+        const [sendCursor, getCursor] = room.makeAction('cursor-move'.slice(0, 12));
+
         window.addEventListener('mousemove', (e) => {
-          const xPercent = (e.clientX / window.innerWidth) * 100
-          const yPercent = (e.clientY / window.innerHeight) * 100
-          sendCursor([`${xPercent}%`,`${yPercent}%}`])
-        })
+          const xPercent = (e.clientX / window.innerWidth) * 100;
+          const yPercent = (e.clientY / window.innerHeight) * 100;
+          sendCursor([`${xPercent}%`, `${yPercent}%}`]);
+        });
 
         getCursor(([x, y]: any, peerId) => {
-          setCursor((cursor) => ({ ...cursor, [peerId]: [x, y] }))
-        })
+          setCursor((prevCursor) => ({ ...prevCursor, [peerId]: [x, y] }));
+        });
       } catch (e: any) {
-        if (!e.message.includes('already registered')) console.error(e)
+        // if (!e.message.includes('already registered')) console.error(e);
       }
-      
     }
-  }, [room])
+  }, [room]);
 
-  return cursor
-}
+  return cursor;
+};
 
-export default usePeerCursor
+export default usePeerCursor;

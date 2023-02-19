@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React from 'react';
 
-import type { Room } from 'trystero'
+import type { Room } from 'trystero';
 
 const CONFIG = {
   appId: 'snry.xyz',
-}
+};
 
 const TrysteroContext = React.createContext<{
   peers: string[],
@@ -16,59 +16,58 @@ const TrysteroContext = React.createContext<{
   peers: [],
   status: 'idle',
   room: null,
-  selfId: null
-})
+  selfId: null,
+});
 
-export const TrysteroProvider = ({ children }: { children: React.ReactNode }) => {
-  const { asPath } = useRouter()
+export function TrysteroProvider({ children }: { children: React.ReactNode }) {
+  const { asPath } = useRouter();
 
-  const [peers, setPeers] = React.useState<string[]>([])
-  const [status, setStatus] = React.useState<'idle' | 'joining' | 'joined'>('idle')
-  const [selfId, setSelfId] = React.useState<string | null>(null)
+  const [peers, setPeers] = React.useState<string[]>([]);
+  const [status, setStatus] = React.useState<'idle' | 'joining' | 'joined'>('idle');
+  const [selfId, setSelfId] = React.useState<string | null>(null);
 
-  let room: React.MutableRefObject<Room | null> = React.useRef(null)
-  
+  const room: React.MutableRefObject<Room | null> = React.useRef(null);
+
   React.useEffect(() => {
-    setStatus('joining')
-    import('trystero').then(({ joinRoom, selfId }) => {
+    setStatus('joining');
+    import('trystero').then(({ joinRoom, selfId: trysteroId }) => {
       try {
-        room.current = joinRoom(CONFIG, asPath)
+        room.current = joinRoom(CONFIG, asPath);
       } catch (e: any) {
-        if (!e.message.includes('already joined')) console.log(e.message)
+        // if (!e.message.includes('already joined')) console.log(e.message);
       }
-      setStatus('joined')
+      setStatus('joined');
 
-      setSelfId(selfId)
+      setSelfId(trysteroId);
 
       room.current?.onPeerJoin((peerId: string) => {
-        setPeers((peers) => [...peers, peerId])
-      })
+        setPeers((currPeers) => [...currPeers, peerId]);
+      });
 
       room.current?.onPeerLeave((peerId: string) => {
-        setPeers((peers) => peers.filter((peer) => peer !== peerId))
-      })
-    })
+        setPeers((currPeers) => currPeers.filter((peer) => peer !== peerId));
+      });
+    });
 
     return () => {
-      if (room.current) room.current.leave()
-      setPeers([])
-      setStatus('idle')
-    }
-  }, [asPath])
-  
+      if (room.current) room.current.leave();
+      setPeers([]);
+      setStatus('idle');
+    };
+  }, [asPath]);
+
+  const providerValue = React.useMemo(() => ({
+    peers,
+    status,
+    selfId,
+    room: room.current,
+  }), [peers, status, selfId]);
 
   return (
-    <TrysteroContext.Provider value={{
-      peers,
-      status,
-      selfId,
-      room: room.current
-    }}>
+    <TrysteroContext.Provider value={providerValue}>
       {children}
     </TrysteroContext.Provider>
   );
 }
 
-export const useTrysteroRoom = () => {
-  return React.useContext(TrysteroContext)
-}
+export const useTrysteroRoom = () => React.useContext(TrysteroContext);

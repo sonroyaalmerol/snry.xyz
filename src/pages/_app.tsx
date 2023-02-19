@@ -1,29 +1,29 @@
-import React from 'react'
+import React from 'react';
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 
-import '@fontsource/fira-code/400.css'
-import '@fontsource/fira-code/700.css'
+import '@fontsource/fira-code/400.css';
+import '@fontsource/fira-code/700.css';
 
 import {
   Box,
   ChakraProvider,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import theme from '@/utils/theme'
-import { trpc } from '@/utils/trpc'
+import theme from '@/utils/theme';
+import { trpc } from '@/utils/trpc';
 
-import { Provider as JotaiProvider } from 'jotai'
-import { TrysteroProvider } from '@/utils/hooks/useTrysteroRoom'
-import { AnimatePresence } from 'framer-motion'
-import { TypeAnimation } from 'react-type-animation'
-import { DefaultSeo } from 'next-seo'
+import { Provider as JotaiProvider } from 'jotai';
+import { TrysteroProvider } from '@/utils/hooks/useTrysteroRoom';
+import { AnimatePresence } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
+import { DefaultSeo } from 'next-seo';
 
-const App = ({ Component, pageProps, router }: AppProps) => {
+function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <DefaultSeo
-        titleTemplate='%s | Son Roy Almerol'
+        titleTemplate="%s | Son Roy Almerol"
         openGraph={{
           type: 'website',
           locale: 'en_US',
@@ -52,7 +52,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
               justifyContent="center"
               zIndex={0}
             >
-              <TypeAnimation 
+              <TypeAnimation
                 sequence={[
                   'Loading...',
                   500,
@@ -60,7 +60,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                   100,
                 ]}
                 repeat={Infinity}
-                cursor={true}
+                cursor
               />
             </Box>
             <AnimatePresence
@@ -74,7 +74,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         </TrysteroProvider>
       </JotaiProvider>
     </>
-  )
+  );
 }
 
-export default trpc.withTRPC(App)
+export default trpc.withTRPC(App);

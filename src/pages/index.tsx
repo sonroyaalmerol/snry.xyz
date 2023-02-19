@@ -1,7 +1,8 @@
-import Landing from '@/components/Home/Landing'
-import PageLayout from '@/components/PageLayout'
-import Stats from '@/components/Stats'
-import { NextSeo } from 'next-seo'
+import React from 'react';
+import Landing from '@/components/Home/Landing';
+import PageLayout from '@/components/PageLayout';
+import Stats from '@/components/Stats';
+import { NextSeo } from 'next-seo';
 
 export default function Home() {
   return (
@@ -19,5 +20,5 @@ export default function Home() {
         <Stats />
       </PageLayout>
     </>
-  )
+  );
 }

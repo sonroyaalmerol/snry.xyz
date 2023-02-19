@@ -1,6 +1,7 @@
-import PageLayout from '@/components/PageLayout'
-import { Box, Heading } from '@chakra-ui/react'
-import { NextSeo } from 'next-seo'
+import React from 'react';
+import PageLayout from '@/components/PageLayout';
+import { Box, Heading } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 
 export default function Projects() {
   return (
@@ -19,5 +20,5 @@ export default function Projects() {
         </Box>
       </PageLayout>
     </>
-  )
+  );
 }
